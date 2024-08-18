@@ -21,7 +21,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   public: `./public`,
   // 网站标题，标题颜色可在 src/client/css/main.css 中修改
-  title: 'FList测试',
+  title: 'FList',
   // 网站的简介，有助于搜索引擎收录
   description: 'FList - 将 GitHub Releases 以类似网盘的形式展示在网页上，方便用户下载开源软件。 支持视频、音频、图片、PDF 等文件的在线预览。',
   // 页面 <head> 标签内添加的额外标签。 不要修改/logo.png可以替换掉这个文件，删除logo.png会导致构建出错。
@@ -42,15 +42,5 @@ export default defineUserConfig({
         repository: "FList"
       }),
     },
-    {
-      mountPath: "/",
-      // 这里使用 fileUrlTreeAnalysis 文件放到对应的文件路径中
-      analysis: fileUrlTreeAnalysis({
-        "/obj_wo3DlMOGwrbDjj7DisKw_14366209383_6101_7b34_3026_db706bcf7af96884a798b9735f0477e9.mp3": "https://github.com/miaopasixx/FList/releases/download/v0.1/obj_wo3DlMOGwrbDjj7DisKw_14366209383_6101_7b34_3026_db706bcf7af96884a798b9735f0477e9.mp3",
-      }),
-      downProxy: cloudflarePagesDownProxy(),//如果文件树地址下载比较慢，也可以配置代理
-    },
-    
-    // ... 可以配置多个挂载路径和仓库，以此类推
   ])
 })
